@@ -16,6 +16,10 @@ import (
 	"database/sql/driver"
 	)
 
+type DB struct {
+	*sql.DB
+}
+
 // start db connection
 func openDb() *sql.DB {
 	url := os.Getenv("DATABASE_URL")
