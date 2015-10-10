@@ -13,7 +13,7 @@ import (
 	"github.com/lib/pq"
 	"log"
 	"net/http"
-	"database"
+	"database/sql/driver"
 	)
 
 // start db connection
