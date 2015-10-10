@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/heroku/go-getting-started/Godeps/_workspace/src/github.com/gin-gonic/gin"
+	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/gin-gonic/gin"
 )
 
 var DB = make(map[string]string)

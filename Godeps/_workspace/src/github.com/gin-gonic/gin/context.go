@@ -12,10 +12,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/heroku/go-getting-started/Godeps/_workspace/src/github.com/gin-gonic/gin/binding"
-	"github.com/heroku/go-getting-started/Godeps/_workspace/src/github.com/gin-gonic/gin/render"
-	"github.com/heroku/go-getting-started/Godeps/_workspace/src/github.com/manucorporat/sse"
-	"github.com/heroku/go-getting-started/Godeps/_workspace/src/golang.org/x/net/context"
+	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/gin-gonic/gin/binding"
+	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/gin-gonic/gin/render"
+	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/manucorporat/sse"
+	"github.com/ranal/piletimyyk/Godeps/_workspace/src/golang.org/x/net/context"
 )
 
 const (

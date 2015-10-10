@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/heroku/go-getting-started/Godeps/_workspace/src/github.com/gin-gonic/gin"
+	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/gin-gonic/gin"
 )
 
 func main() {

@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/mattn/go-isatty"
+	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/mattn/go-isatty"
 )
 
 const (

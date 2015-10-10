@@ -1,50 +1,189 @@
-<html>
-  {{template "header.tmpl.html"}}
-<body>
-  {{template "nav.tmpl.html"}}
+<!DOCTYPE html>
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/static/lang-logo.png">
-    </a>
-    <h1>Tarkvaraprojekt</h1>
-      <p>Sellest teeme võimsa piletiostusüsteemi! :-D</p>
-      <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-go"><span class="glyphiconglyphicon-flash"></span> Getting Started with Go</a>
-      <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/go-getting-started"><span class="glyphiconglyphicon-download"></span> Source on GitHub</a>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Piletimüük</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/static/css/jumbotron-narrow.css" rel="stylesheet">
+    <script src="/static/js/ie-emulation-modes-warning.js"></script><style type="text/css"></style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+      <center><img src="/static/img/elektriteater_logo.png"></center>
+      </div>
+
+      <center><h1>Osta pilet</h1></center>
+
+      <!-- Dropdown filmi valimiseks
+           TODO: Prepopulate andmebaasist -->
+<form role="form" name="form" method="" action="">
+          
+  <div class="form-group">
+            <label for="film">
+              Film:
+            </label>
+    <select class ='form-control'>
+        <option selecter='selected'>
+        Vali film
+        </option>
+
+        <option value=1>
+        Kõrboja peremees
+        </option>
+
+        <option value=2>
+        Kevade
+        </option>
+
+        <option value=3>
+        Viimne Reliikvia
+        </option>
+
+        <option value=4>
+        Siin me oleme!
+        </option>
+
+        <option value=5>
+        Mehed ei nuta
+        </option>
+    </select>
   </div>
+
+   <div class="form-group">
+            <label for="seanss">
+              Seanss:
+            </label>
+    <select class ='form-control'>
+        <option selecter='selected'>
+        Vali seanss
+        </option>
+
+        <option value=1>
+        N, 12.10.2015, 19:00
+        </option>
+
+        <option value=2>
+        R, 13.10.2015, 20:00
+        </option>
+
+        <option value=3>
+        L, 14.10.2015, 18:30
+        </option>
+    </select>
+  </div>
+</form>
+
+<!-- Pileti tüüp, hind, kogus -->
+<table class="table">
+    <tbody>
+      <tr>
+        <td>Tavapilet</td>
+        <td>8€</td>
+        <td>Vali kogus</td>
+      </tr>
+      <tr>
+        <td>Pensionär</td>
+        <td>6,20€</td>
+        <td>Vali kogus</td>
+      </tr>
+      <tr>
+        <td>Alla 14-aastane laps</td>
+        <td>5€</td>
+        <td>Vali kogus</td>
+      </tr>
+    </tbody>
+</table>
+
+<!-- Jumbotron on praegu placeholder saaliplaani jaoks -->
+<div class="jumbotron">
+  <h1>Saaliplaan</h1>
+  <p>Vali piletid saaliplaanilt!</p>
 </div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-      To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-go" class="alert-link">Getting Started with Go on Heroku</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-          <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/go-getting-started">Heroku Button</a> on the repository.</li>
 
-          <li>When Heroku received the source code, it grabbed all the dependencies in the <a href="https://github.com/heroku/go-getting-started/blob/master/Godeps">Godeps file</a>.</li>
-          <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-          <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-          <li>Check out the <a href="https://devcenter.heroku.com/articles/getting-started-with-go">Getting Started</a> guide to learn more!</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-go">Getting Started with Go on Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/go-support">Heroku Go Support</a></li>
-      </ul>
-    </div>
-  </div> <!-- row -->
-    <div class="alert alert-info text-center" role="alert">
-      Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with allthe concepts you need in order to build and deploy your own apps.
-  </div>
-</div>
+<!-- Kontaktandmed kogutakse siit formist -->
+<form role="form" name="form" method="POST" action="andmed.go">
+<div class="col-md-6">
+        <h3 class="dark-grey">Kontaktandmed</h3>
+        <div class="form-group col-lg-6">
+          <label>Eesnimi</label>
+          <input type="text" name="eesnimi" class="form-control" id="eesnimi" value="">
+        </div>
 
-</body>
-</html>
+        
+        <div class="form-group col-lg-6">
+          <label>Perekonnanimi</label>
+          <input type="text" name="perekonnanimi" class="form-control" id="perekonnanimi" value="">
+        </div>
+
+
+          <div class="form-group col-lg-12">
+          <label>E-mail</label>
+          <input type="email" name="email" class="form-control" id="email" value="">
+        </div>
+
+          <div class="form-group col-lg-12">
+          <label>Telefoninumber</label>
+          <input type="number" name="telefon" class="form-control" id="telefon" value="">
+        </div>
+
+          <div class="col-lg-12">
+                    <label>Sooduskood</label>
+      <div class="input-group">
+      <input type="text" class="form-control" placeholder="Sooduskood" id="sooduskood" name="sooduskood">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">OK</button>
+      </span>
+    </div><!-- /input-group -->
+    </form>
+  </div><!-- /.col-lg-6 -->
+                
+       
+        
+        <div class="col-sm-6">
+        <label>Vali pank</label><br />
+        <!-- Hiljem labelite asemele img src pangalinkide logodega -->
+        <input type="radio" name="scr[bank]" id="swedbank"/><label for="swedbank">Swedbank</label><br />
+        <input type="radio" name="scr[bank]" id="seb"/><label for="seb">SEB</label><br />
+        <input type="radio" name="scr[bank]" id="lhv"/><label for="seb">LHV</label><br />
+        </div>    
+      </div>
+    
+      <div class="col-md-6">
+        <h3 class="dark-grey">Informatsioon</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque convallis libero in sapien pharetra tincidunt.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque convallis libero in sapien pharetra tincidunt.
+        </p>
+        <p>
+          Cras volutpat, lacus quis semper pharetra, nisi enim dignissim est, et sollicitudin quam ipsum vel mi. Sed commodo urna ac urna. Nullam eu tortor. Curabitur sodales scelerisque magna. Donec ultricies tristique pede. Nullam libero.
+        </p>
+        <p>
+          Praesent interdum mollis neque. In egestas nulla eget pede. Integer eu purus sed diam dictum scelerisque.
+        </p>
+        <p><h3>Kokku: 17,40€</h3></p>
+        
+        <button type="submit" class="btn btn-primary">Maksma</button>
+      </div>
+    </div>
+
+    <br />
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./index_files/ie10-viewport-bug-workaround.js"></script>
+  
+</body></html>
