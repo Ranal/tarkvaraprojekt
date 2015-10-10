@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/gin-gonic/gin"
+	"github.com/ranal/tarkvaraprojekt/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"os"

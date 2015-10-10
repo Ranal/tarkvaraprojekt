@@ -9,9 +9,12 @@ package main
 
 import (
 	"database/sql"
-	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/lib/pq"
+	"github.com/ranal/tarkvaraprojekt/Godeps/_workspace/src/github.com/lib/pq"
 	"os"
-)
+	"github.com/lib/pq"
+	"log"
+	"net/http"
+	)
 
 // start db connection
 func openDb() *sql.DB {

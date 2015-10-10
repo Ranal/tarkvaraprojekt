@@ -2,7 +2,7 @@ package main
 
 import (
 	"database/sql"
-	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/lib/pq"
+	"github.com/ranal/tarkvaraprojekt/Godeps/_workspace/src/github.com/lib/pq"
 	"os"
 )
 
