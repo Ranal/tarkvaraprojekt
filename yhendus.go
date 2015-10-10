@@ -14,7 +14,21 @@ db, err := sql.Open("postgres", "postgres://vcjthhaofvkqke:QXnZclsVqyZPU5C8Tn_ch
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	age := 21
-	rows, err := db.Query("SELECT name FROM users WHERE age = $1", age)
+stmt, err := db.Prepare("INSERT INTO users(name) VALUES(?)")
+if err != nil {
+	log.Fatal(err)
+}
+res, err := stmt.Exec("Dolly")
+if err != nil {
+	log.Fatal(err)
+}
+lastId, err := res.LastInsertId()
+if err != nil {
+	log.Fatal(err)
+}
+rowCnt, err := res.RowsAffected()
+if err != nil {
+	log.Fatal(err)
+}
+log.Printf("ID = %d, affected = %d\n", lastId, rowCnt)
 }
