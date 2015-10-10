@@ -13,7 +13,6 @@ import (
 	"github.com/lib/pq"
 	"log"
 	"net/http"
-	"database/sql/driver"
 	)
 
 type DB struct {
@@ -47,12 +46,12 @@ func process_form_data(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")
 		telefon := r.FormValue("telefon")
 	}
-	result, err := database.Exec("INSERT INTO andmed(eesnimi,perekonnanimi,email,telefon) VALUES (eesnimi,perekonnanimi,email,telefon)")
+	result, err := db.Exec("INSERT INTO andmed(eesnimi,perekonnanimi,email,telefon) VALUES (eesnimi,perekonnanimi,email,telefon)")
 
 }
 
 // Exec func
-func (db *DB) Exec(query string, args ...interface{}) (Result, error)
+func (db *DB) Exec(query string, args ...interface{}) (sql.Result, error)
 
 // insert to db
 //result, err := database.Exec("INSERT INTO andmed(eesnimi,perekonnanimi,email,telefon) VALUES (eesnimi,perekonnanimi,email,telefon)")
