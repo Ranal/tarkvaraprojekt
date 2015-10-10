@@ -32,7 +32,7 @@ if err != nil {
 	log.Fatal(err)
 }
 log.Printf("ID = %d, affected = %d\n", lastId, rowCnt)
-
+}
 
 func main() {
 	http.HandleFunc("/yhendus", yhendus)
