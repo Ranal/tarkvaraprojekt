@@ -9,7 +9,6 @@ package main
 
 import (
 	"database/sql"
-	"github.com/ranal/tarkvaraprojekt/Godeps/_workspace/src/github.com/lib/pq"
 	"os"
 	"github.com/lib/pq"
 	"log"
