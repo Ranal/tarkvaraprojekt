@@ -17,7 +17,7 @@ var (
 
 func dbFunc(c *gin.Context) {
 
-	result, err := db.Exec(
+	_, err := db.Exec(
 		"CREATE TABLE IF NOT EXISTS andmed(eesnimi varchar(50), perekonnanimi varchar(50), email varchar(50), telefon integer)",)
 	if err != nil {
 	 log.Fatal(err)
