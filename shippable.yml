@@ -1,0 +1,28 @@
+# Build Environment
+build_environment: ubuntu1204
+
+# language setting
+language: go
+
+# version numbers
+go:
+  - 1.5
+  
+before_install:
+  - go get github.com/lib/pq
+  - go get github.com/t-yuki/gocover-cobertura
+  - go get github.com/onsi/gomega
+  - go get github.com/onsi/ginkgo
+  - go get code.google.com/p/go.tools/cmd/cover
+  - mkdir -p $GOPATH/src/github.com/Shippable
+  - ln -sfn $PWD $GOPATH/src/github.com/Shippable/sample_go
+
+# Make folders for the reports
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+  - psql -c 'CREATE DATABASE test;' -U postgres
+
+script:
+  - go test -coverprofile=coverage.txt -covermode count ./
+  - $GOPATH/bin/gocover-cobertura < coverage.txt > shippable/codecoverage/coverage.xml

@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;piletimyyk&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$/../../shurcooL/sanitized_anchor_name/.git" />
+      <root url="file://$PROJECT_DIR$/.idea" />
+      <root url="file://$PROJECT_DIR$/../../gin-gonic/gin/.git" />
+      <root url="file://$PROJECT_DIR$/../../manucorporat/sse/.git" />
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://$PROJECT_DIR$/../../russross/blackfriday/testdata" />
+      <root url="file://$PROJECT_DIR$/../../heroku/go-getting-started/Godeps/_workspace" />
+      <root url="file://$PROJECT_DIR$/../../russross/blackfriday/.git" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org/x/net/html/charset/testdata" />
+      <root url="file://$PROJECT_DIR$/.git" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org/x/net/.git" />
+      <root url="file://$PROJECT_DIR$/../../lib/pq/.git" />
+      <root url="file://$PROJECT_DIR$/../../tools/godep/.git" />
+      <root url="file://$PROJECT_DIR$/../../golang/example/.git" />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in/bluesuncorp/validator.v5/.git" />
+      <root url="file://$PROJECT_DIR$/../../mattn/go-isatty/.git" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org/x/net/html/testdata" />
+      <root url="file://$PROJECT_DIR$/../../tools/godep/Godeps/_workspace" />
+      <root url="file://$PROJECT_DIR$/../../heroku/go-getting-started/.git" />
+      <root url="file://$PROJECT_DIR$/../../mattn/go-colorable/.git" />
+      <root url="file://$PROJECT_DIR$/Godeps/_workspace" />
+      <root url="file://$PROJECT_DIR$/../../mattn/go-colorable/_example" />
+    </excluded>
+  </library>
+</component>
