@@ -28,7 +28,6 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-    })
     router.GET("/yhendus", func(c *gin.Context) {
         c.String(200, "pong")
     })
