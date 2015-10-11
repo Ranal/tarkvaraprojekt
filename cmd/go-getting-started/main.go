@@ -5,6 +5,9 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"bytes"
+	"strconv"
+	"github.com/russross/blackfriday"
 )
 
 func andmedFunc(w http.ResponseWriter, req *http.Request) {
