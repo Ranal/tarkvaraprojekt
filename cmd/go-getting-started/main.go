@@ -36,6 +36,7 @@ func dbFunc(c *gin.Context) {
 	defer rows.Close()
 }
 
+/*
 func sayhelloName(w http.ResponseWriter, r *http.Request) {
     r.ParseForm()  //Parse url parameters passed, then parse the response packet for the POST body (request body)
     // attention: If you do not call ParseForm method, the following data can not be obtained form
@@ -49,6 +50,7 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
     }
     fmt.Fprintf(w, "Hello astaxie!") // write data to response
 }
+*/
 
 func main() {
 
@@ -75,7 +77,7 @@ func main() {
 	})
 
 	router.POST("/db", dbFunc)
-	router.POST("/test", sayhelloName)
+	//router.POST("/test", sayhelloName)
 
 	router.Run(":" + port)
 }
