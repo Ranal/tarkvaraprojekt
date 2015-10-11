@@ -48,6 +48,16 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
         fmt.Println("key:", k)
         fmt.Println("val:", strings.Join(v, ""))
     }
+
+    //
+	fmt.Printf("%+v\n", r.Form)
+	for key, values := range r.Form {   // range over map
+	  for _, value := range values {    // range over []string
+	     fmt.Println(key, value)
+	  }
+	}
+
+	//
     fmt.Fprintf(w, "Hello world!") // write data to response
 }
 
