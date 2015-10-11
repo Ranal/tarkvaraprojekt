@@ -10,9 +10,10 @@ import (
 	"github.com/russross/blackfriday"
 )
 
-func andmedFunc(w http.ResponseWriter, req *http.Request) {
-	w.Write([]byte("Hello"))
-}
+//func andmedFunc(w http.ResponseWriter, req *http.Request) {
+//	w.Write([]byte("Hello"))
+//}
+
 
 func main() {
 	port := os.Getenv("PORT")
@@ -34,14 +35,9 @@ func main() {
         c.String(http.StatusOK, string(blackfriday.MarkdownBasic([]byte("**hi!**"))))
     })
 
-    router.GET("/repeat", andmedFunc)
-
 	router.Run(":" + port)
 
-//
-	http.HandleFunc("/yhendus",func(w http.ResponseWriter, req *http.Request){w.Write([]byte("Hello World"))})
-	http.ListenAndServe(":"+port, nil)
-
-//
+//http.HandleFunc("/yhendus",func(w http.ResponseWriter, req *http.Request){w.Write([]byte("Hello World"))})
+//http.ListenAndServe(":"+port, nil)
 }
 
