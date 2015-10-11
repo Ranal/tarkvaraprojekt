@@ -7,9 +7,9 @@ import (
 	"os"
 )
 
-//func andmedFunc(w http.ResponseWriter, req *http.Request) {
-//	w.Write([]byte("Hello"))
-//}
+func andmedFunc(w http.ResponseWriter, req *http.Request) {
+	w.Write([]byte("Hello"))
+}
 
 
 func main() {
@@ -28,9 +28,7 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-	router.GET("/yhendus", func(c *gin.Context) {
-        c.HTML(http.StatusOK, "yhendus.tmpl.html", nil)
-    })
+	router.POST("/yhendus", andmedFunc)
 
 	router.Run(":" + port)
 
