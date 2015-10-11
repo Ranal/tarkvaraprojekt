@@ -58,7 +58,7 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//
-    fmt.Fprintf(w, "Hello world!") // write data to response
+    //fmt.Fprintf(w, "Hello world!") // write data to response
 }
 
 
