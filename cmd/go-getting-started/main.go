@@ -8,9 +8,6 @@ import (
 )
 
 func main() {
-
-
-
 	port := os.Getenv("PORT")
 
 	if port == "" {
@@ -28,9 +25,10 @@ func main() {
 
 	router.Run(":" + port)
 
-		//
+//
+	http.ListenAndServe("https://gotest300.herokuapp.com", nil)
 	http.HandleFunc("/yhendus",andmedFunc)
-	//
+//
 }
 
 func andmedFunc(w http.ResponseWriter, req *http.Request) {
