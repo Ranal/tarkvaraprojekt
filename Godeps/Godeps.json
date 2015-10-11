@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/ranal/piletimyyk",
+	"ImportPath": "github.com/ranal/tarkvaraprojekt/tarkvaraprojekt",
 	"GoVersion": "go1.5.1",
 	"Packages": [
 		"./..."
@@ -16,25 +16,9 @@
 			"Rev": "ffe986aba3e6cfcded8b06615965941408891ef0"
 		},
 		{
-			"ImportPath": "github.com/manucorporat/sse",
-			"Rev": "fe6ea2c8e398672518ef204bf0fbd9af858d0e15"
-		},
-		{
-			"ImportPath": "github.com/mattn/go-colorable",
-			"Rev": "40e4aedc8fabf8c23e040057540867186712faa5"
-		},
-		{
-			"ImportPath": "github.com/mattn/go-isatty",
-			"Rev": "7fcbc72f853b92b5720db4a6b8482be612daef24"
-		},
-		{
-			"ImportPath": "golang.org/x/net/context",
-			"Rev": "b846920a172af75fe52c1400ae6094307be83b8a"
-		},
-		{
-			"ImportPath": "gopkg.in/bluesuncorp/validator.v5",
-			"Comment": "v5.12",
-			"Rev": "d5acf1dac43705f8bfbb71d878e290e2bed3950b"
+			"ImportPath": "github.com/russross/blackfriday",
+			"Comment": "v1.3",
+			"Rev": "8cec3a854e68dba10faabbe31c089abf4a3e57a6"
 		}
 	]
 }

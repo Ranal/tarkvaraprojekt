@@ -9,7 +9,7 @@ import (
 
 	"testing"
 
-	"github.com/ranal/piletimyyk/Godeps/_workspace/src/github.com/manucorporat/sse"
+	"github.com/manucorporat/sse"
 	"github.com/stretchr/testify/assert"
 )
 
