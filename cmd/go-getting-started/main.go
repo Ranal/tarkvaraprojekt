@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"strings"
+	//"strings"
 
 	"github.com/ranal/tarkvaraprojekt/tarkvaraprojekt/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	_ "github.com/ranal/tarkvaraprojekt/tarkvaraprojekt/Godeps/_workspace/src/github.com/lib/pq"
@@ -69,7 +69,7 @@ func dbFunc(c *gin.Context) {
 	email := c.Query("email")
 	telefon := c.Query("telefon")
 
-	c.String(http.StatusOK, "Hello %s %s", firstname, lastname)
+	c.String(http.StatusOK, "Hello %s %s", eesnimi, perekonnanimi)
 
 
 	/*
