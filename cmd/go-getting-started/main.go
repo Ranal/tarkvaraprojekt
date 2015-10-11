@@ -69,7 +69,7 @@ func dbFunc(c *gin.Context) {
 	email := c.Query("email")
 	telefon := c.Query("telefon")
 
-	c.String(http.StatusOK, "Hello %s %s", eesnimi, perekonnanimi)
+	c.String(http.StatusOK, "Hello %s %s", eesnimi, perekonnanimi, email, telefon)
 
 
 	/*
