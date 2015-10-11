@@ -29,7 +29,7 @@ func main() {
 	})
 
 	router.GET("/yhendus", func(c *gin.Context) {
-        c.String(http.StatusOK, string("hi, i'm working"))
+        c.HTML(http.StatusOK, "yhendus.tmpl.html", nil)
     })
 
 	router.Run(":" + port)
