@@ -26,7 +26,14 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-    router.POST("/yhendus", func yhendus(w http.ResponseWriter, req *http.Request) {
+    //router.POST("/yhendus", func(c *gin.Context) {
+   //}
+
+
+    //-----//
+
+    //func(c *gin.Context) {c.String(http.StatusOK, "see OK nupp funkab")}
+	http.HandleFunc("/yhendus", func yhendus(w http.ResponseWriter, req *http.Request) {
 	//db, err := sql.Open("postgres", "user=vcjthhaofvkqke dbname=dedgfoiefjhcdu sslmode=disable 
 	//	password=QXnZclsVqyZPU5C8Tn_ch81Qt2 host=ec2-54-217-238-100.eu-west-1.compute.amazonaws.com port=5432 ")
 	db, err := sql.Open("postgres", "postgres://vcjthhaofvkqke:QXnZ	clsVqyZPU5C8Tn_ch81Qt2@ec2-54-217-238-100.eu-west-1.compute.amazonaws.com:5432/dedgfoiefjhcdu")
@@ -51,12 +58,6 @@ func main() {
 	}
 	log.Printf("ID = %d, affected = %d\n", lastId, rowCnt)
 })
-
-
-    //-----//
-
-    //func(c *gin.Context) {c.String(http.StatusOK, "see OK nupp funkab")}
-
     //-----//
 
 	router.Run(":" + port)
