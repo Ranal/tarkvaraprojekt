@@ -5,9 +5,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"bytes"
-	"strconv"
-	"github.com/russross/blackfriday"
 )
 
 //func andmedFunc(w http.ResponseWriter, req *http.Request) {
@@ -32,7 +29,7 @@ func main() {
 	})
 
 	router.GET("/yhendus", func(c *gin.Context) {
-        c.String(http.StatusOK, string(blackfriday.MarkdownBasic([]byte("**hi!**"))))
+        c.String(http.StatusOK, string("hi, i'm working"))
     })
 
 	router.Run(":" + port)
