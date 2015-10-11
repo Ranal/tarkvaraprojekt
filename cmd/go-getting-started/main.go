@@ -17,14 +17,27 @@ var (
 
 func dbFunc(c *gin.Context) {
 
+	result, err := database.Exec(
+		"CREATE TABLE IF NOT EXISTS andmed(eesnimi varchar(50), perekonnanimi varchar(50), email varchar(50), telefon integer)",)
+	if err != nil {
+	 log.Fatal(err)
+	}
+
 	eesnimi := c.Query("eesnimi")
 	perekonnanimi := c.Query("perekonnanimi")
 	email := c.Query("email")
 	telefon := c.Query("telefon")
+	sooduskood := c.Query("sooduskood")
 
 	c.String(http.StatusOK, "Pilet ostetud! Nimi: %s %s | E-mail: %s | Telefon: %s ", eesnimi, perekonnanimi, email, telefon)
 
-	if _, err := db.Exec("INSERT INTO andmed VALUES ($1, $2, $3, $4)",eesnimi,perekonnanimi,email,telefon); err != nil {
+	if _, err := db.Exec("SELECT COUNT(1) FROM sooduskoodid WHERE KEY = $5", sooduskood); err != nil {
+	c.String(http.StatusInternalServerError,
+		fmt.Sprintf("Sooduskoodi ei leitud! %q", err))
+	return
+	}
+
+	if _, err := db.Exec("INSERT INTO andmed VALUES ($1, $2, $3, $4)", eesnimi, perekonnanimi, email, telefon); err != nil {
 		c.String(http.StatusInternalServerError,
 			fmt.Sprintf("Viga andmete sisestamisel: %q", err))
 		return
