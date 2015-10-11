@@ -36,7 +36,6 @@ func dbFunc(c *gin.Context) {
 
 func main() {
 
-	var err error
 	var errd error
 
 	port := os.Getenv("PORT")
