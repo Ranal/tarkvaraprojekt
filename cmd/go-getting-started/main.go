@@ -30,9 +30,8 @@ func main() {
 	router.Run(":" + port)
 
 //
-	http.HandleFunc("/yhendus",andmedFunc)
-	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request){w.Write([]byte("Hello World"))})
-	http.ListenAndServe("https://gotest300.herokuapp.com", nil)
+	http.HandleFunc("/yhendus",func(w http.ResponseWriter, req *http.Request){w.Write([]byte("Hello World"))})
+	http.ListenAndServe(":"+port, nil)
 
 //
 }
