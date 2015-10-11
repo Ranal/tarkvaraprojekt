@@ -55,7 +55,6 @@ func dbFunc(c *gin.Context) {
 	defer rows.Close()
 }
 
-
 func main() {
 
 	var errd error
