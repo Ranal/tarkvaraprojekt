@@ -71,7 +71,7 @@ func dbFunc(c *gin.Context) {
 
 	c.String(http.StatusOK, "Pilet ostetud! Nimi: %s %s | E-mail: %s | Telefon: %s", eesnimi, perekonnanimi, email, telefon)
 
-	if _, err := db.Exec("INSERT INTO andmed VALUES ($1, $2, $3, $4)"); err != nil {
+	if _, err := db.Exec("INSERT INTO andmed VALUES ($eesnimi, $perekonnanimi, $email, $telefon)"); err != nil {
 		c.String(http.StatusInternalServerError,
 			fmt.Sprintf("Error: %q", err))
 		return
