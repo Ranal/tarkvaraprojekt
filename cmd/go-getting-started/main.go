@@ -29,19 +29,19 @@ func repeatFunc(c *gin.Context) {
 }
 
 func dbFunc(c *gin.Context) {
-	if _, err := db.Exec("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)"); err != nil {
+	if _, err := db.Exec("CREATE TABLE andmed(eesnimi varchar(50), perekonnanimi varchar(50), email varchar(50), telefon integer)"); err != nil {
 		c.String(http.StatusInternalServerError,
 			fmt.Sprintf("Error creating database table: %q", err))
 		return
 	}
 
-	if _, err := db.Exec("INSERT INTO ticks VALUES (now())"); err != nil {
+	if _, err := db.Exec("INSERT INTO andmed VALUES ('Ranal', 'Saron', 'ranalsaron@gmail.com', 5120628)"); err != nil {
 		c.String(http.StatusInternalServerError,
 			fmt.Sprintf("Error incrementing tick: %q", err))
 		return
 	}
 
-	rows, err := db.Query("SELECT tick FROM ticks")
+	rows, err := db.Query("SELECT eesnimi FROM andmed")
 	if err != nil {
 		c.String(http.StatusInternalServerError,
 			fmt.Sprintf("Error reading ticks: %q", err))
