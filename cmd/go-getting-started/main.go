@@ -71,9 +71,7 @@ func dbFunc(c *gin.Context) {
 
 	c.String(http.StatusOK, "Pilet ostetud! Nimi: %s %s | E-mail: %s | Telefon: %s", eesnimi, perekonnanimi, email, telefon)
 
-
-	/*
-	if _, err := db.Exec("INSERT INTO andmed VALUES ('Uus', 'Rida', 'uuedread@gmail.com', 5009208)"); err != nil {
+	if _, err := db.Exec("INSERT INTO andmed VALUES (eesnimi, perekonnanimi, email, telefon)"); err != nil {
 		c.String(http.StatusInternalServerError,
 			fmt.Sprintf("Error: %q", err))
 		return
@@ -82,14 +80,13 @@ func dbFunc(c *gin.Context) {
 	rows, err := db.Query("SELECT eesnimi FROM andmed")
 	if err != nil {
 		c.String(http.StatusInternalServerError,
-			fmt.Sprintf("Error reading rows: %q", err))
+			fmt.Sprintf("Error ridade lugemisel: %q", err))
 		return
 	}
 
 	c.String(http.StatusOK, fmt.Sprintf("Rida andmebaasi lisatud"))
 
 	defer rows.Close()
-	*/
 }
 
 
