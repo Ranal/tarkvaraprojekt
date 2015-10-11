@@ -77,7 +77,7 @@ func main() {
 	})
 
 	router.POST("/db_", dbFunc)
-	router.POST("/test", func(c *gin.Context){
+	router.POST("/db", func(c *gin.Context){
 		sayhelloName(c.Writer, c.Request)
 		})
 	//http.HandleFunc("/db", sayhelloName)
