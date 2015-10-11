@@ -16,7 +16,7 @@ var (
 	db     *sql.DB = nil
 )
 
-func dbFunc(c *gin.Context) {
+func dbFunc_(c *gin.Context) {
 
 	if _, err := db.Exec("INSERT INTO andmed VALUES ('Uus', 'Rida', 'uuedread@gmail.com', 5009208)"); err != nil {
 		c.String(http.StatusInternalServerError,
@@ -36,7 +36,7 @@ func dbFunc(c *gin.Context) {
 	defer rows.Close()
 }
 
-
+/*
 func sayhelloName(w http.ResponseWriter, r *http.Request) {
     r.ParseForm()  //Parse url parameters passed, then parse the response packet for the POST body (request body)
     // attention: If you do not call ParseForm method, the following data can not be obtained form
@@ -58,7 +58,38 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//
-    //fmt.Fprintf(w, "Hello world!") // write data to response
+    fmt.Fprintf(w, "Hello world!") // write data to response
+}
+*/
+
+func dbFunc(c *gin.Context) {
+
+	eesnimi := c.Query("eesnimi")
+	perekonnanimi := c.Query("perekonnanimi")
+	email := c.Query("email")
+	telefon := c.Query("telefon")
+
+	c.String(http.StatusOK, "Hello %s %s", firstname, lastname)
+
+
+	/*
+	if _, err := db.Exec("INSERT INTO andmed VALUES ('Uus', 'Rida', 'uuedread@gmail.com', 5009208)"); err != nil {
+		c.String(http.StatusInternalServerError,
+			fmt.Sprintf("Error: %q", err))
+		return
+	}
+	
+	rows, err := db.Query("SELECT eesnimi FROM andmed")
+	if err != nil {
+		c.String(http.StatusInternalServerError,
+			fmt.Sprintf("Error reading rows: %q", err))
+		return
+	}
+
+	c.String(http.StatusOK, fmt.Sprintf("Rida andmebaasi lisatud"))
+
+	defer rows.Close()
+	*/
 }
 
 
@@ -86,10 +117,8 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-	router.GET("/db_", dbFunc)
-	router.GET("/db", func(c *gin.Context){
-		sayhelloName(c.Writer, c.Request)
-		})
+	router.GET("/db_", dbFunc_)
+	router.GET("/db", dbFunc)
 	//http.HandleFunc("/db", sayhelloName)
 
 	router.Run(":" + port)
