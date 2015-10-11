@@ -48,7 +48,7 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
         fmt.Println("key:", k)
         fmt.Println("val:", strings.Join(v, ""))
     }
-    fmt.Fprintf(w, "Hello astaxie!") // write data to response
+    fmt.Fprintf(w, "Hello world!") // write data to response
 }
 
 
@@ -76,8 +76,8 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-	router.POST("/db_", dbFunc)
-	router.POST("/db", func(c *gin.Context){
+	router.GET("/db_", dbFunc)
+	router.GET("/db", func(c *gin.Context){
 		sayhelloName(c.Writer, c.Request)
 		})
 	//http.HandleFunc("/db", sayhelloName)
