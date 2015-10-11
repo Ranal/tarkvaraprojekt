@@ -31,10 +31,7 @@ func main() {
 
 //
 	http.HandleFunc("/yhendus",andmedFunc)
-	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request)
-	{
-		w.Write([]byte("Hello World"))
-		})
+	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request){w.Write([]byte("Hello World"))})
 	http.ListenAndServe("https://gotest300.herokuapp.com", nil)
 
 //
