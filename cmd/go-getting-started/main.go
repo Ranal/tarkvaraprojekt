@@ -16,13 +16,13 @@ var (
 
 func dbFunc(c *gin.Context) {
 
-	if db.Exec(
+	_, err := db.Exec(
 		"CREATE TABLE IF NOT EXISTS andmed(eesnimi varchar(50), perekonnanimi varchar(50), email varchar(50), telefon integer)",)
 	if err != nil {
 	 log.Fatal(err)
 	}
 
-	if db.Exec(
+	_, err := db.Exec(
 		"CREATE TABLE IF NOT EXISTS sooduskoodid(kood varchar(50), soodustus float)",)
 	if err != nil {
 	 log.Fatal(err)
