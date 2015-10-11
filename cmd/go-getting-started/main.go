@@ -31,7 +31,7 @@ func dbFunc(c *gin.Context) {
 
 	c.String(http.StatusOK, "Pilet ostetud! Nimi: %s %s | E-mail: %s | Telefon: %s ", eesnimi, perekonnanimi, email, telefon)
 
-	if _, err := db.Exec("SELECT COUNT(1) FROM sooduskoodid WHERE kood = ($5::varchar || '%')", sooduskood); err != nil {
+	if _, err := db.Exec("SELECT COUNT(1) FROM sooduskoodid WHERE kood = ($1::varchar || '%')", sooduskood); err != nil {
 	c.String(http.StatusInternalServerError,
 		fmt.Sprintf("Sooduskoodi ei leitud! %q", err))
 	return
