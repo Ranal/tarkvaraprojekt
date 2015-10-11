@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
-	"time"
+	//"time"
 
 	"github.com/ranal/tarkvaraprojekt/tarkvaraprojekt/Godeps/_workspace/src/github.com/gin-gonic/gin"
 	_ "github.com/ranal/tarkvaraprojekt/tarkvaraprojekt/Godeps/_workspace/src/github.com/lib/pq"
