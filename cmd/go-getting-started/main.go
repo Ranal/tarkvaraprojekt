@@ -22,7 +22,7 @@ func dbFunc(c *gin.Context) {
 	email := c.Query("email")
 	telefon := c.Query("telefon")
 
-	c.String(http.StatusOK, "Pilet ostetud! Nimi: %s %s | E-mail: %s | Telefon: %s", eesnimi, perekonnanimi, email, telefon)
+	c.String(http.StatusOK, "Pilet ostetud! Nimi: %s %s | E-mail: %s | Telefon: %s ", eesnimi, perekonnanimi, email, telefon)
 
 	if _, err := db.Exec("INSERT INTO andmed VALUES ($1, $2, $3, $4)",eesnimi,perekonnanimi,email,telefon); err != nil {
 		c.String(http.StatusInternalServerError,
