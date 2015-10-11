@@ -8,6 +8,12 @@ import (
 )
 
 func main() {
+
+	//
+	http.HandleFunc("/yhendus",andmedFunc)
+	http.ListenAndServe(":8080", nil)
+	//
+
 	port := os.Getenv("PORT")
 
 	if port == "" {
@@ -24,4 +30,8 @@ func main() {
 	})
 
 	router.Run(":" + port)
+}
+
+func andmedFunc(w http.ResponseWriter, req *http.Request) {
+	w.Write([]byte("Hello"))
 }
