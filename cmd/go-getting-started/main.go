@@ -53,7 +53,6 @@ func main() {
 		log.Fatal(err)
 	}
 	log.Printf("ID = %d, affected = %d\n", lastId, rowCnt)
-	}
 	//
 
 	router.Run(":" + port)
