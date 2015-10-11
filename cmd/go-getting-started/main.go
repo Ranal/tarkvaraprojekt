@@ -28,8 +28,8 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-    router.GET("/yhendus", func(c *gin.Context) {
-        c.String("see OK nupp funkab")
+    router.POST("/yhendus", func(c *gin.Context) {
+        c.String(http.StatusOK, "see OK nupp funkab")
     })
 
 	router.Run(":" + port)
