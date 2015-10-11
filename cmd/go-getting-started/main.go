@@ -15,6 +15,27 @@ var (
 	db     *sql.DB = nil
 )
 
+func dbFunc(c *gin.Context) {
+
+	if _, err := db.Exec("INSERT INTO andmed VALUES ('Uus', 'Rida', 'uuedread@gmail.com', 5009208)"); err != nil {
+		c.String(http.StatusInternalServerError,
+			fmt.Sprintf("Error: %q", err))
+		return
+	}
+	
+	rows, err := db.Query("SELECT eesnimi FROM andmed")
+	if err != nil {
+		c.String(http.StatusInternalServerError,
+			fmt.Sprintf("Error reading rows: %q", err))
+		return
+	}
+
+	c.String(http.StatusOK, fmt.Sprintf("Rida andmebaasi lisatud"))
+
+	defer rows.Close()
+	
+}
+
 func main() {
 
 	var errd error
@@ -38,24 +59,7 @@ func main() {
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
-	router.GET("/db", func dbFunc(c *gin.Context) {
-
-	if _, err := db.Exec("INSERT INTO andmed VALUES ('Uus', 'Rida', 'uuedread@gmail.com', 5009208)"); err != nil {
-		c.String(http.StatusInternalServerError,
-			fmt.Sprintf("Error: %q", err))
-		return
-	}
-	
-	rows, err := db.Query("SELECT eesnimi FROM andmed")
-	if err != nil {
-		c.String(http.StatusInternalServerError,
-			fmt.Sprintf("Error reading rows: %q", err))
-		return
-	}
-
-	defer rows.Close()
-	
-})
+	router.POST("/db", dbFunc)
 
 	router.Run(":" + port)
 }
