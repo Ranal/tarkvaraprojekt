@@ -29,7 +29,7 @@ func main() {
 	})
 
     router.GET("/yhendus", func(c *gin.Context) {
-        c.String(200, "pong")
+        c.String("see OK nupp funkab")
     })
 
 	router.Run(":" + port)
