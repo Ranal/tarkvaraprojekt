@@ -26,19 +26,24 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
-    router.POST("/yhendus", func(c *gin.Context) {
-        c.String(http.StatusOK, "see OK nupp funkab")
-    })
+    router.POST("/yhendus", yhendus())
+
+
+    //-----//
+
+    //func(c *gin.Context) {c.String(http.StatusOK, "see OK nupp funkab")}
 
     //-----//
 
 	router.Run(":" + port)
 }
 
-func yhendus(w http.ResponseWriter, req *http.Request) {
+
+//args: w http.ResponseWriter, req *http.Request
+func yhendus() {
 	//db, err := sql.Open("postgres", "user=vcjthhaofvkqke dbname=dedgfoiefjhcdu sslmode=disable 
 	//	password=QXnZclsVqyZPU5C8Tn_ch81Qt2 host=ec2-54-217-238-100.eu-west-1.compute.amazonaws.com port=5432 ")
-	db, err := sql.Open("postgres", "postgres://vcjthhaofvkqke:QXnZclsVqyZPU5C8Tn_ch81Qt2@ec2-54-217-238-100.eu-west-1.compute.amazonaws.com:5432/dedgfoiefjhcdu")
+	db, err := sql.Open("postgres", "postgres://vcjthhaofvkqke:QXnZ	clsVqyZPU5C8Tn_ch81Qt2@ec2-54-217-238-100.eu-west-1.compute.amazonaws.com:5432/dedgfoiefjhcdu")
 	if err != nil {
 		log.Fatal(err)
 	}
