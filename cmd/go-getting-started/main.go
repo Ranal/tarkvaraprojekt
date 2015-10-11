@@ -22,6 +22,12 @@ func dbFunc(c *gin.Context) {
 	 log.Fatal(err)
 	}
 
+	if db.Exec(
+		"CREATE TABLE IF NOT EXISTS sooduskoodid(kood varchar(50), soodustus float)",)
+	if err != nil {
+	 log.Fatal(err)
+	}
+
 	eesnimi := c.Query("eesnimi")
 	perekonnanimi := c.Query("perekonnanimi")
 	email := c.Query("email")
