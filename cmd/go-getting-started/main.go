@@ -6,9 +6,8 @@ import (
 	"log"
 	"net/http"
 	"os"
-
-	"github.com/ranal/tarkvaraprojekt/tarkvaraprojekt/Godeps/_workspace/src/github.com/gin-gonic/gin"
-	_ "github.com/ranal/tarkvaraprojekt/tarkvaraprojekt/Godeps/_workspace/src/github.com/lib/pq"
+	"github.com/gin-gonic/gin"
+	_ "github.com/lib/pq"
 )
 
 var (
