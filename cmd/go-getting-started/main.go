@@ -22,16 +22,16 @@ func dbFunc(c *gin.Context) {
 			fmt.Sprintf("Error: %q", err))
 		return
 	}
-	/*
+	
 	rows, err := db.Query("SELECT eesnimi FROM andmed")
 	if err != nil {
 		c.String(http.StatusInternalServerError,
-			fmt.Sprintf("Error reading ticks: %q", err))
+			fmt.Sprintf("Error reading rows: %q", err))
 		return
 	}
 
 	defer rows.Close()
-	*/
+	
 }
 
 func main() {
