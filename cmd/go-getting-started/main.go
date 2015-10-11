@@ -9,10 +9,7 @@ import (
 
 func main() {
 
-	//
-	http.HandleFunc("/yhendus",andmedFunc)
-	http.ListenAndServe(":8080", nil)
-	//
+
 
 	port := os.Getenv("PORT")
 
@@ -30,6 +27,10 @@ func main() {
 	})
 
 	router.Run(":" + port)
+
+		//
+	http.HandleFunc("/yhendus",andmedFunc)
+	//
 }
 
 func andmedFunc(w http.ResponseWriter, req *http.Request) {
