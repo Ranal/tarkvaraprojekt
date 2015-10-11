@@ -7,6 +7,10 @@ import (
 	"os"
 )
 
+func andmedFunc(w http.ResponseWriter, req *http.Request) {
+	w.Write([]byte("Hello"))
+}
+
 func main() {
 	port := os.Getenv("PORT")
 
@@ -26,11 +30,13 @@ func main() {
 	router.Run(":" + port)
 
 //
-	http.ListenAndServe("https://gotest300.herokuapp.com", nil)
 	http.HandleFunc("/yhendus",andmedFunc)
+	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request)
+	{
+		w.Write([]byte("Hello World"))
+		})
+	http.ListenAndServe("https://gotest300.herokuapp.com", nil)
+
 //
 }
 
-func andmedFunc(w http.ResponseWriter, req *http.Request) {
-	w.Write([]byte("Hello"))
-}
