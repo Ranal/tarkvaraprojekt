@@ -27,6 +27,12 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
+	router.GET("/yhendus", func(c *gin.Context) {
+        c.String(http.StatusOK, string(blackfriday.MarkdownBasic([]byte("**hi!**"))))
+    })
+
+    router.GET("/repeat", andmedFunc)
+
 	router.Run(":" + port)
 
 //
