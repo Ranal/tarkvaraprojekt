@@ -33,31 +33,7 @@ func main() {
     //-----//
 
     //func(c *gin.Context) {c.String(http.StatusOK, "see OK nupp funkab")}
-	http.HandleFunc("/yhendus", func yhendus(w http.ResponseWriter, req *http.Request) {
-	//db, err := sql.Open("postgres", "user=vcjthhaofvkqke dbname=dedgfoiefjhcdu sslmode=disable 
-	//	password=QXnZclsVqyZPU5C8Tn_ch81Qt2 host=ec2-54-217-238-100.eu-west-1.compute.amazonaws.com port=5432 ")
-	db, err := sql.Open("postgres", "postgres://vcjthhaofvkqke:QXnZ	clsVqyZPU5C8Tn_ch81Qt2@ec2-54-217-238-100.eu-west-1.compute.amazonaws.com:5432/dedgfoiefjhcdu")
-	if err != nil {
-		log.Fatal(err)
-	}
-	stmt, err := db.Prepare("INSERT INTO users(name) VALUES(?)")
-	if err != nil {
-		log.Fatal(err)
-	}
-	res, err := stmt.Exec("Dolly")
-	if err != nil {
-		log.Fatal(err)
-	}
-	lastId, err := res.LastInsertId()
-	if err != nil {
-		log.Fatal(err)
-	}
-	rowCnt, err := res.RowsAffected()
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("ID = %d, affected = %d\n", lastId, rowCnt)
-})
+	http.HandleFunc("/yhendus", yhendus(w http.ResponseWriter, req *http.Request))
     //-----//
 
 	router.Run(":" + port)
