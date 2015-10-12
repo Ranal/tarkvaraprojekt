@@ -31,10 +31,12 @@ func dbFunc(c *gin.Context) {
 	c.String(http.StatusOK, "Pilet ostetud! Nimi: %s %s | E-mail: %s | Telefon: %s ", eesnimi, perekonnanimi, email, telefon)
 
 	//todo
-	if _, err := db.Exec("SELECT COUNT(1) FROM sooduskoodid WHERE kood = $1", sooduskood); err != nil {
+	if _, err := db.Exec("SELECT soodustus FROM sooduskoodid WHERE kood = $1", sooduskood); err != nil {
 	c.String(http.StatusInternalServerError,
 		fmt.Sprintf("Sooduskoodi ei leitud! %q", err))
 	return
+	} else {
+		c.String(http.StatusOK, fmt.Sprintf("| Sooduskood rakendatud!"))
 	}
 
 	if _, err := db.Exec("INSERT INTO andmed VALUES ($1, $2, $3, $4)", eesnimi, perekonnanimi, email, telefon); err != nil {
